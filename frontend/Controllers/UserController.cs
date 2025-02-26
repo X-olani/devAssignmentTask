@@ -18,7 +18,11 @@ namespace frontend.Controllers
 
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri("https://localhost:7018/api/");
+
+                //authorization is used for the http client call 
                 APISecurity.InitHead(client);
+
+
                 var response = client.GetAsync("users");
                 response.Wait();
 

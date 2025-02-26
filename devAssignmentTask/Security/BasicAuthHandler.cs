@@ -61,12 +61,14 @@ namespace devAssignmentTask.Security
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@UserName", username);
-                    cmd.Parameters.AddWithValue("@Password", password); // Consider hashing
+                    cmd.Parameters.AddWithValue("@Password", password); 
+                    // Consider hashing
 
                     con.Open();
                     int count = (int)cmd.ExecuteScalar();
 
-                    return count > 0; // Returns true if user exists
+                    return count > 0; 
+                    // Returns true if user exists
                 }
             }
 
